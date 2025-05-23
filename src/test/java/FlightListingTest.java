@@ -31,7 +31,7 @@ public class FlightListingTest {
     public void testFlightSearchWithLogin() {
         // Arrange
         String username = "testuser";
-        String password = "testpassword";
+        String password = "1y78fsdfngdfi783423w5767678df";
         String from = "Anchorage ANC";
         String to = "Abakan ABA";
         LocalDate departureDate = LocalDate.of(2024, 12, 20);
@@ -51,7 +51,7 @@ public class FlightListingTest {
     public void testFlightListingsAreNotEmpty() {
         // Arrange
         String username = "testuser";
-        String password = "testpassword";
+        String password = "1y78fsdfngdfi783423w";
         String from = "Anchorage ANC";
         String to = "Abakan ABA";
         LocalDate departureDate = LocalDate.of(2024, 12, 20);

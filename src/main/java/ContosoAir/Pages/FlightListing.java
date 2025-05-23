@@ -17,8 +17,6 @@ import java.util.stream.Collectors;
 
 /**
  * Class for performing flight listing functionalities, including login and searching for available flights.
- *
- * Author: Ajay
  */
 public class FlightListing implements FlightListingOperation {
 

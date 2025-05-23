@@ -7,8 +7,7 @@ import java.util.List;
 /**
  * Interface that defines the methods for the flight listing functionality,
  * including login, searching for flights, and listing available flights.
- *
- * Author: Ajay
+
  */
 public interface FlightListingOperation {
 
