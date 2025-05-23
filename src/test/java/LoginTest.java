@@ -27,10 +27,8 @@ public class LoginTest {
      */
     @Test
     public void performLoginWithCredentials() throws InterruptedException {
-        String url = "http://localhost:3001/";
         String username = "Raihan";
         String password = "12345678";
-        loginTest.navigateToUrl(url);
         loginTest.performLoginWithCredentials(username, password);
         Thread.sleep(2000);
     }
@@ -40,10 +38,9 @@ public class LoginTest {
      */
     @Test
     public void performLoginWithoutCredentials() throws InterruptedException {
-        String url = "http://localhost:3001/";
-        loginTest.navigateToUrl(url);
-        String alertMessage = loginTest.performLoginWithoutCredentials();
-        Assert.assertEquals("Missing Credentials", alertMessage);
+        String expected = "Missing Credentials";
+        String actual = loginTest.performLoginWithoutCredentials();
+        Assert.assertEquals(expected, actual);
         Thread.sleep(2000);
     }
 
