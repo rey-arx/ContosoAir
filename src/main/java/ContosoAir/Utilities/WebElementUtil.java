@@ -1,5 +1,6 @@
 package ContosoAir.Utilities;
 
+import ContosoAir.Util.Recommendation;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -86,5 +87,14 @@ public class WebElementUtil {
     }
     public static void setWindowSize(int width, int height, WebDriver driver) {
         driver.manage().window().setSize(new Dimension(width, height));
+    }
+    public static Recommendation getRecommendation(WebElement webElement){
+        String imgUrl="";
+        String desc="";
+        WebElement desktopImage = webElement.findElement(By.cssSelector("img.block-cities-list-item-figure-image--desktop"));
+        imgUrl = desktopImage.getAttribute("src");
+        WebElement caption = webElement.findElement(By.tagName("figcaption"));
+        desc = caption.getText();
+        return new Recommendation(imgUrl,desc);
     }
 }
