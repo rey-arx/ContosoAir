@@ -39,8 +39,7 @@ public class FlightListingTest {
         LocalDate returnDate = LocalDate.of(2024, 12, 25);
 
         // Act
-        flightListing.login(username, password);
-        flightListing.searchFlights(from, to, departureDate, passengers, returnDate);
+        flightListing.searchFlights(username,password,from, to, departureDate, passengers, returnDate);
 
         // Assert
         assertDoesNotThrow(() -> flightListing.listAvailableFlights(),
@@ -59,8 +58,7 @@ public class FlightListingTest {
         LocalDate returnDate = LocalDate.of(2024, 12, 25);
 
         // Act
-        flightListing.login(username, password);
-        flightListing.searchFlights(from, to, departureDate, passengers, returnDate);
+        flightListing.searchFlights(username,password,from, to, departureDate, passengers, returnDate);
 
         // Assert
         List<WebElement> listings = flightListing.listAvailableFlights();

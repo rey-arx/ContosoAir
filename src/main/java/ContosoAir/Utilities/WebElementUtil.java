@@ -81,20 +81,18 @@ public class WebElementUtil {
         WebElement element = findElement(locator, driver);
         return element != null ? element.getText() : "";
     }
+    /**
+     * Checks if the desired element is displayed .
+     */
     public static boolean isElementDisplayed(By locator, WebDriver driver) {
         WebElement element = findElement(locator, driver);
         return element != null && element.isDisplayed();
     }
+    /**
+     * Sets Window size to the required width and height .
+     */
     public static void setWindowSize(int width, int height, WebDriver driver) {
         driver.manage().window().setSize(new Dimension(width, height));
     }
-    public static Recommendation getRecommendation(WebElement webElement){
-        String imgUrl="";
-        String desc="";
-        WebElement desktopImage = webElement.findElement(By.cssSelector("img.block-cities-list-item-figure-image--desktop"));
-        imgUrl = desktopImage.getAttribute("src");
-        WebElement caption = webElement.findElement(By.tagName("figcaption"));
-        desc = caption.getText();
-        return new Recommendation(imgUrl,desc);
-    }
+
 }

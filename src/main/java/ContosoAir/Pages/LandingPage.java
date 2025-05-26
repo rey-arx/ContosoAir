@@ -2,6 +2,7 @@ package ContosoAir.Pages;
 
 import ContosoAir.Operations.LandingPageOperations;
 import ContosoAir.Util.Recommendation;
+import ContosoAir.Utilities.RecommendationUtility;
 import ContosoAir.Utilities.WebElementUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -38,8 +39,9 @@ public class LandingPage implements LandingPageOperations {
         logoIdentifier = By.xpath("/html/body/navbar/nav/div/div[2]/div[1]/a/img");
         this.driver = new ChromeDriver();
         this.url = "http://localhost:3001/";
+        WebElementUtil.navigateTo(url,driver);
 //        driver.navigate().to(url);
-//        WebElementUtil.navigateTo(url);
+//        WebElementUtil.navigateTo(url,driver);
         WebElementUtil.initializeDriver(driver); // Maximizes window and prepares browser
     }
 
@@ -67,7 +69,7 @@ public class LandingPage implements LandingPageOperations {
         List<WebElement> rec = WebElementUtil.findElements(By.cssSelector("figure.block-cities-list-item-figure"), driver);
         List<Recommendation> recommendations = new ArrayList<>();
         for(int i=0;i<rec.size();i++){
-            recommendations.add(WebElementUtil.getRecommendation(rec.get(i)));
+            recommendations.add(RecommendationUtility.getRecommendation(rec.get(i)));
         }
         return recommendations;
     }
@@ -110,6 +112,7 @@ public class LandingPage implements LandingPageOperations {
      */
     @Override
     public String enterLogin() {
+        WebElementUtil.navigateTo(url, driver);
         click(loginLink, driver);
         String heading = WebElementUtil.getText(By.cssSelector(".block-search-form-title"), driver);
         return heading;

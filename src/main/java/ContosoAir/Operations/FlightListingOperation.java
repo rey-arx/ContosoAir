@@ -28,7 +28,7 @@ public interface FlightListingOperation {
      * @param passengers     The number of passengers for the flight.
      * @param returnDate     The return date of the flight (if applicable).
      */
-    void searchFlights(String from, String to, LocalDate departureDate, int passengers, LocalDate returnDate);
+    void searchFlights(String username, String password, String from, String to, LocalDate departureDate, int passengers, LocalDate returnDate);
 
     /**
      * Lists all available flights after performing the search.

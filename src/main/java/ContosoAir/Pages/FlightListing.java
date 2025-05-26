@@ -47,7 +47,8 @@ public class FlightListing implements FlightListingOperation {
      * Searches for flights with the provided details.
      */
     @Override
-    public void searchFlights(String from, String to, LocalDate departureDate, int passengers, LocalDate returnDate) {
+    public void searchFlights(String username, String password, String from, String to, LocalDate departureDate, int passengers, LocalDate returnDate) {
+        login(username, password);
         WebElementUtil.click(By.linkText("Book"), driver);
 
         // Select "from" location from dropdown
